@@ -1,0 +1,5 @@
+package com.osc.dddspring.domain2;
+
+public enum Rank {
+    STAFF, ASSISTANT_MANAGER, MANAGER, DEPUTY_GENERAL_MANAGER, GENERAL_MANAGER, EXECUTIVE_DIRECTOR
+}
