@@ -7,6 +7,7 @@ import com.osc.dddspring.exceptions.NoCustomerException;
 import com.osc.dddspring.infra.CustomerRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CalculateDiscountService {
     private final RuleDiscounter ruleDiscounter;
@@ -24,8 +25,8 @@ public class CalculateDiscountService {
     }
 
     private Customer findCustomer(String customerId) throws NoCustomerException {
-        Customer customer = customerRepository.findById(customerId);
-        if (customer == null) throw new NoCustomerException();
-        return customer;
+        Optional<Customer> customer = customerRepository.findById(customerId);
+        if (customer.isEmpty()) throw new NoCustomerException();
+        return customer.get();
     }
 }

@@ -1,8 +1,11 @@
 package com.osc.dddspring.infra;
 
 import com.osc.dddspring.domain.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository {
+import java.util.Optional;
 
-    Customer findById(String id);
+public interface CustomerRepository extends JpaRepository<Customer, String> {
+
+    Optional<Customer> findById(String id);
 }
