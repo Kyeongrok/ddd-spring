@@ -1,5 +1,7 @@
 # CHAPTER 07 객체 분해
 
+## 02 프로시저 추상화와 기능 분해
+
 ```
 직원의 급여를 계산한다.
     사용자로부터 소득세율을 입력받는다.
@@ -22,7 +24,30 @@ def sumOfBasePays()
 end
 ```
 
+### 데이터 변경으로 인한 파급효과
 
 ```ruby
 
 ```
+
+calculatePay 함수에 조건 분기를 추가함으로써 해결할 수 있다.
+
+```ruby
+def calculateHourlyPayFor(name, taxRate)
+    index = $employees.index(name)
+    basePay = $basePays[index] * $timeCards[index]
+    return basePay - (basePay * taxRate)
+end
+```
+
+정규 직원과 아르바이트 직원을 판단하는 hourly? 함수 추가. 아르바이트 직원이면 true를 반환한다.
+```ruby
+def hourly?(name)
+    return $hourlys[$employees.index(name)]
+end
+```
+
+## 03 모듈
+
+
+
