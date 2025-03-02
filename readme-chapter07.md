@@ -1,5 +1,7 @@
 # CHAPTER 07 객체 분해
 
+단기기억의 한계를 뛰어넘기 위해 본질적인 정보만 남기고 불필요한 세부사항을 걸러내느 문제를 단순화 하는 것을 추상화 라고 합니다.
+
 ## 02 프로시저 추상화와 기능 분해
 
 ```
@@ -26,17 +28,32 @@ end
 
 ### 데이터 변경으로 인한 파급효과
 
-```ruby
+하향식 기능 분해의 가장 큰 문제점은 어떤 데이터를 어떤 함수가 사용하고 있는지를 추적하기 어렵다는 것이다.
 
-```
 
 calculatePay 함수에 조건 분기를 추가함으로써 해결할 수 있다.
+
+```ruby
+def calculatePay(name)
+    taxRate = getTaxRate()
+    if (hourly?(name)) then
+        pay = calculateHoulyPayFor(name, taxRate)
+    else
+        pay = calculatePayFor(name, taxRate)
+    end
+    puts(describeResult(name, pay))
+end
+```
 
 ```ruby
 def calculateHourlyPayFor(name, taxRate)
     index = $employees.index(name)
     basePay = $basePays[index] * $timeCards[index]
     return basePay - (basePay * taxRate)
+end
+
+def calculatePayFor(name, taxRate)
+
 end
 ```
 
@@ -48,6 +65,14 @@ end
 ```
 
 ## 03 모듈
+
+### 정보은닉과 모듈
+
+정보은닉은 시스템을 모듈 단위로 분해하기 위한 기본 원리로 시스템에서 자주 변경되는 부분을 상대적으로 덜 변경되는 안정적인 인터페이스 뒤로 감춰야 한다는 것이 핵심이다.
+
+
+## 04 데이터 추상화와 추상 데이터 타입
+
 
 
 
