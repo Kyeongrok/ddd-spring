@@ -1,6 +1,4 @@
-package com.osc.dddspring.chapter06;
-
-import com.osc.dddspring.domain.Screening;
+package com.osc.object.chapter06;
 
 public interface DiscountCondition {
     boolean isSatisfiedBy(Screening screening);

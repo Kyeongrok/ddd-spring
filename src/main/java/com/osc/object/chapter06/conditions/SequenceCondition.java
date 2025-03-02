@@ -1,6 +1,6 @@
-package com.osc.dddspring.conditions;
+package com.osc.object.chapter06.conditions;
 
-import com.osc.dddspring.domain.Screening;
+import com.osc.object.chapter06.Screening;
 
 public class SequenceCondition {
     private int sequence;

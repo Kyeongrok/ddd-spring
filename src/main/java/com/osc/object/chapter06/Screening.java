@@ -1,4 +1,4 @@
-package com.osc.dddspring.domain;
+package com.osc.object.chapter06;
 
 import java.time.LocalDateTime;
 

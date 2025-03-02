@@ -1,4 +1,4 @@
-package com.osc.dddspring.chapter07;
+package com.osc.object.chapter07;
 
 import java.util.Scanner;
 
