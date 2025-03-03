@@ -18,4 +18,7 @@ public class Money {
         return new Money(value * multiplier);
     }
 
+    public Money times(int audienceCount) {
+        return null;
+    }
 }

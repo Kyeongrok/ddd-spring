@@ -1,6 +1,6 @@
 package com.osc.dddspring.application;
 
-import com.osc.dddspring.domain.Customer;
+import com.osc.object.chapter05.Customer;
 import com.osc.object.chapter08.Money;
 import com.osc.dddspring.domain.OrderLine;
 

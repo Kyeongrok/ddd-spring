@@ -1,6 +1,6 @@
 package com.osc.object.chapter06.conditions;
 
-import com.osc.object.chapter06.Screening;
+import com.osc.object.chapter05.Screening;
 
 public class SequenceCondition {
     private int sequence;

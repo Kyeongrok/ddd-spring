@@ -1,6 +1,6 @@
 package com.osc.dddspring.infra;
 
-import com.osc.dddspring.domain.Customer;
+import com.osc.object.chapter05.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
