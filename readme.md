@@ -1,7 +1,8 @@
 
-[Chapter01](readme-chapter01.md)  
-[Chapter06](readme-chapter06.md)  
-[Chapter07](readme-chapter07.md)
+[Chapter01 객체, 설계](readme-chapter01.md)  
+[Chapter06 메세지와 인터페이스](readme-chapter06.md)  
+[Chapter07 객체 분해](readme-chapter07.md)
+[Chapter08 의존성 관리하기](readme-chapter08.md)
 
 ## DDD란?
 비즈니스로직을 오브젝트에 최대한 넣고 테이블 설계 전에 도메인 설계를 먼저 하는 개발 방법론 입니다. 기존에 우리가 익숙한 방식은 Data Driven입니다.
