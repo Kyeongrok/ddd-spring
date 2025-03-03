@@ -21,4 +21,8 @@ public class Money {
     public Money times(int audienceCount) {
         return null;
     }
+
+    public Money minus(Money money) {
+        return null;
+    }
 }

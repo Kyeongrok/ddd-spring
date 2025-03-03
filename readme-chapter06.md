@@ -13,14 +13,45 @@
 ### 디미터 법칙(Law of Demeter)
 객체의 내부 구조에 강하게 결합되지 않도록 협력 경로를 제한하라는 것입니다. "요약하자면 오직 인접한 이웃하고만 말하라."로 요약 할 수 있습니다.
 
+### 묻지 말고 시켜라
+
+ReservationAgency는 Screening 내부의 Movie에 접근하는 대신 Screening에게 직접 요금을 계산하도록 요청했습니다.
+요금을 계산하는데 필요한 정보를 잘 알고 있는 screening에게 요금을 계산할 **책임**을 할당 한 것입니다.
+
+```java
+public class ReservationAgency {
+    public Reservation reserve(Screening screening, Customer customer, int audienceCount) {
+        Money fee = screening.calculateFee(audienceCount);
+        return new Reservation(customer, screening, fee);
+    }
+}
+```
+
+
 ### 의도를 드러내는 인터페이스
 
 메서드가 작업을 어떻게 수행하는지를 나타내도록 이름을 짓는 것.
 
 '어떻게'가 아니라 '무엇'을 하는지를 드러내는 것.
 
-[DiscountCondition](src/main/java/com/osc/dddspring/chapter06/DiscountCondition.java)
 
+```java
+public class TicketSeller {
+    public void sellTo(Audience audience) {}
+}
+```
+
+```java
+public class Audience {
+    public Long buy(Ticket ticket){}
+}
+```
+
+```java
+public class Bag {
+    public Long hold(Ticket ticket) {}
+}
+```
 
 ## 04 명령-쿼리 분리 원칙
 

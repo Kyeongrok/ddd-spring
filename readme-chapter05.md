@@ -27,5 +27,36 @@
 변경에 취약한 클래스란 코드를 수정해야 하는 이유를 하나 이상 가지는 클래스다. DiscountCondition은 다음과 같이 서로 다른 세 가지 이유로 변경될 수 있습니다.
 
 #### 새로운 할인 조건 추가
+
+[DiscountCondition.java](src/main/java/com/osc/object/chapter05/DiscountCondition.java)
+
+다음 isSatisfiedBy는 새로운 조건이 추가된다면 if ~ else 구문을 수정해야 합니다. 
+또한 새로운 할인 조건이 새로운 데이터를 요구한다면 DiscountCondition에 속성을 추가하는 작업도 필요 합니다.
+
+```java
+public boolean isSatisfiedBy(Screening screening) {
+    if (type == DiscountConditionType.PERIOD) {
+        return isSatisfiedByPeriod(screening);
+    }
+    return isSatisfiedBySequence(screening);
+}
+```
+
 #### 순번 조건을 판단하는 로직 변경
+
 #### 기간 조건을 판단하는 로직이 변경되는 경우
+
+[DiscountCondition.java](src/main/java/com/osc/object/chapter06/DiscountCondition.java)
+
+
+DiscountCondition은 하나 이상의 변경 이유를 가지기 때문에 응집도가 낮습니다. 
+응집도가 낮다는 것은 **서로 연관성이 없는** 기능이나 데이터가 하나의 클래스 안에 뭉쳐져 있다는 것을 의미 합니다.
+
+
+### 변경과 유연성(합성)
+
+## 04 책임 주도 설계의 대안
+
+일단 만들고 '책임'을 찾아냅니다. 숙련된 전문가도 '역할'과 '책임'을 찾기가 어려운 경우가 많기 때문입니다.
+
+

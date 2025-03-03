@@ -2,9 +2,11 @@ package com.osc.object.chapter05;
 
 import com.osc.object.chapter08.Money;
 import com.osc.object.chapter08.Movie;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class Screening {
     private Movie movie;
     private int sequence;
