@@ -1,5 +1,6 @@
 package com.osc.dddspring.domain;
 
+import com.osc.object.chapter08.Money;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,7 +1,7 @@
 package com.osc.dddspring.application;
 
 import com.osc.dddspring.domain.Customer;
-import com.osc.dddspring.domain.Money;
+import com.osc.object.chapter08.Money;
 import com.osc.dddspring.domain.OrderLine;
 import com.osc.dddspring.exceptions.NoCustomerException;
 import com.osc.dddspring.infra.CustomerRepository;
