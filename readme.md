@@ -3,6 +3,9 @@
 [Chapter06 메세지와 인터페이스](readme-chapter06.md)  
 [Chapter07 객체 분해](readme-chapter07.md)
 [Chapter08 의존성 관리하기](readme-chapter08.md)
+[Chapter09 유연한 설계](readme-chapter09.md)
+[Chapter10 상속과 코드 재사용](readme-chapter10.md)
+[Chapter11 합성과 유연한 설계](readme-chapter11.md)
 
 ## DDD란?
 비즈니스로직을 오브젝트에 최대한 넣고 테이블 설계 전에 도메인 설계를 먼저 하는 개발 방법론 입니다. 기존에 우리가 익숙한 방식은 Data Driven입니다.
