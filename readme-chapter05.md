@@ -60,3 +60,35 @@ DiscountCondition은 하나 이상의 변경 이유를 가지기 때문에 응�
 일단 만들고 '책임'을 찾아냅니다. 숙련된 전문가도 '역할'과 '책임'을 찾기가 어려운 경우가 많기 때문입니다.
 
 
+## Memo
+
+DiscountCondition은 DiscountConditionType에 따라 어떤 메소드를 태울지 결정 합니다.
+
+```java
+public class DiscountCondition {
+  private DiscountConditionType type;
+  private int sequence;
+  private DayOfWeek dayOfWeek;
+  private LocalTime startTime;
+  private LocalTime endTime;
+
+  public boolean isDiscountable(Screening screening) {
+    if (type == DiscountConditionType.PERIOD) {
+      return isSatisfiedByPeriod(screening);
+    }
+    return isSatisfiedBySequence(screening);
+  }
+
+  private boolean isSatisfiedByPeriod(Screening screening) {
+    return screening.getWhenScreened().getDayOfWeek().equals(dayOfWeek)
+            && startTime.isBefore(screening.getWhenScreened().toLocalTime())
+            && endTime.isAfter(screening.getWhenScreened().toLocalTime());
+  }
+
+  private boolean isSatisfiedBySequence(Screening screening) {
+    return sequence == screening.getSequence();
+  }
+}
+```
+
+
