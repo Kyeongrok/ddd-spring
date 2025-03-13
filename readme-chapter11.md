@@ -31,3 +31,22 @@ public class Properties {
 자식 클래스는 추상 메서드를 오버라이딩하고 자신만의 로직을 구현해서 부모 클래스에서 정의한 플로우에 개입할 수 있게 된다.
 
 [11b 합성 관계록 변경하기](src/main/java/com/osc/object/chapter11b/readme.md)
+
+
+## 03 합성관계로 변경하기
+
+```java
+public abstract class BasePolicy implements RatePolicy {
+    private RatePolicy next;
+
+    public BasePolicy(RatePolicy next) {
+        this.next = next;
+    }
+    @Override
+    public Money calculateFee(Phone phone){
+        Money fee = calculateCallFee(phone);
+        return fee;
+    }
+    abstract protected Money isSatisfiedBy(Money fee);
+}
+```
